@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Around Earth Project</title>
+    <style>
+        .container
+        {
+            height: 1500px;
+            width: 2000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        
+        }
+        .orbit
+        {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color:rgb(20, 115, 174);
+            position: relative;
+            animation-name: spin;
+            animation-duration: 40s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .moon
+        {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: lightgrey;
+            box-shadow: 0px 0px 4px 3px grey;
+            position: absolute;
+            top: -50px;
+            left: -100px;
+
+        }
+        @keyframes spin
+         {
+           
+            100%
+             { 
+                transform: rotate(360deg);
+             }
+             0%  
+              { 
+                transform: rotate(0deg); 
+              } 
+             50% 
+              { 
+                transform: rotate(180deg); 
+              }
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="orbit">
+            <div class="moon"></div>
+        </div>
+        
+       
+    </div>
+    
+</body>
+</html>
