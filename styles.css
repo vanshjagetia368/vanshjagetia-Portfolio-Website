@@ -152,6 +152,7 @@ nav ul li a.active {
   white-space: pre-line;
 }
 /* This is the <a> tag styled as a button now */
+/* This styles the "Contact Me" link in the home section */
 #home a.btn {
   background: var(--section-bg);
   color: var(--nav-blue);
@@ -164,9 +165,10 @@ nav ul li a.active {
   box-shadow: 0 8px 22px rgba(243, 119, 81, 0.19);
   margin-bottom: 10px;
   transition: background 0.3s, color 0.3s;
-  text-decoration: none; /* Removes underline */
-  display: inline-block; /* Behaves like a button */
+  text-decoration: none; /* Removes the underline */
+  display: inline-block;  /* Makes it behave like a button */
 }
+
 #home a.btn:hover {
   background: var(--accent-coral);
   color: var(--white);
