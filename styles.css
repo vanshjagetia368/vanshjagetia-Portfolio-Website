@@ -6,7 +6,7 @@
   --white: #fff;
 }
 
-/* FIX: Added a proper box-sizing reset to prevent width issues */
+/* Proper box-sizing reset */
 html {
   box-sizing: border-box;
 }
@@ -17,7 +17,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  width: 100%; /* FIX: Changed from 100vw to 100% to avoid horizontal scrollbars */
+  width: 100%;
   min-height: 100vh;
   background: var(--section-bg);
   color: var(--text-primary);
@@ -25,7 +25,6 @@ body {
   overflow-x: hidden;
 }
 
-/* FIX: Removed problematic 100vw width declarations from these elements */
 header, footer, section {
   width: 100%;
   margin: 0 !important;
@@ -44,7 +43,7 @@ header {
 }
 .container {
   width: 100%;
-  max-width: 1100px; /* Restored a max-width for content centering */
+  max-width: 1100px;
   padding: 0 3vw !important;
   margin: 0 auto !important;
 }
@@ -73,7 +72,7 @@ nav ul li a {
   transition: color 0.3s, border-bottom 0.3s;
   padding-bottom: 3px;
   border-bottom: 2px solid transparent;
-  text-decoration: none; /* Added to ensure nav links aren't underlined */
+  text-decoration: none;
 }
 nav ul li a:hover,
 nav ul li a.active {
@@ -86,7 +85,31 @@ nav ul li a.active {
   cursor: pointer;
 }
 
-/* Home Section with photo on right */
+/* Home Section */
+/* =============================================== */
+/* FINAL FIX FOR MAIN "CONTACT ME" BUTTON         */
+/* =============================================== */
+
+#home .btn {
+  display: inline-block;
+  background: var(--section-bg);
+  color: var(--nav-blue);
+  font-weight: 700;
+  font-size: 1.03rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 34px;
+  padding: 16px 44px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(243, 119, 81, 0.19);
+  margin-bottom: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+#home .btn:hover {
+  background: var(--accent-coral);
+  color: var(--white);
+}
 .home-content {
   display: flex;
   justify-content: space-between;
@@ -127,7 +150,6 @@ nav ul li a.active {
   object-fit: cover;
 }
 
-/* Hero Section adjustments */
 #home {
   min-height: 100vh;
   padding-top: 140px;
@@ -150,28 +172,6 @@ nav ul li a.active {
   line-height: 1.7;
   margin: 0 auto 32px auto;
   white-space: pre-line;
-}
-/* This is the <a> tag styled as a button now */
-/* This styles the "Contact Me" link in the home section */
-#home a.btn {
-  background: var(--section-bg);
-  color: var(--nav-blue);
-  font-weight: 700;
-  font-size: 1.03rem;
-  border: none;
-  border-radius: 34px;
-  padding: 16px 44px;
-  cursor: pointer;
-  box-shadow: 0 8px 22px rgba(243, 119, 81, 0.19);
-  margin-bottom: 10px;
-  transition: background 0.3s, color 0.3s;
-  text-decoration: none; /* Removes the underline */
-  display: inline-block;  /* Makes it behave like a button */
-}
-
-#home a.btn:hover {
-  background: var(--accent-coral);
-  color: var(--white);
 }
 
 /* Sections styling */
@@ -209,7 +209,7 @@ section h2 {
 
 #about h2 {
   font-size: 2.2rem;
-  color: #ff7b00;
+  color: #E07A5F;
   text-align: center;
   margin-bottom: 1.5rem;
   position: relative;
@@ -230,8 +230,8 @@ section h2 {
 }
 
 #education h2 {
-  font-size: 2.2rem;
-  color: #ff7b00;
+  font-size: 2rem;
+  color: #E07A5F;
   margin-bottom: 1.2rem;
   text-align: center;
   position: relative;
@@ -257,7 +257,6 @@ section h2 {
   transform: translateY(0);
 }
 
-/* Hover Effect */
 #education li:hover {
   background: #fff;
   transform: translateY(-6px);
@@ -277,7 +276,7 @@ section h2 {
 }
 
 #education li br {
-  display: none; /* makes it cleaner on hover */
+  display: none;
 }
 
 #education li:hover::after {
@@ -294,15 +293,12 @@ section h2 {
   padding: 80px 10%;
   background:  #FAF0E6;
   text-align: center;
-  
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  color:#ff7b00;
- 
 }
 
 .project-card {
@@ -343,7 +339,6 @@ section h2 {
   display: inline-block;
   background: #FFF8EB;
   border: 1px solid #FAEED9;
-
   color: #E2B36B;
   padding: 5px 10px;
   border-radius: 20px;
@@ -352,7 +347,6 @@ section h2 {
   font-weight: 600;
 }
 
-/* FIX: This rule now correctly styles the <a> tag in your projects section */
 .project-card .btn {
   display: inline-block;
   padding: 8px 14px;
@@ -371,23 +365,17 @@ section h2 {
 }
 
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* This is your original section-title for projects, restored */
 #projects .section-title {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 40px;
-  color: #ff7b00; /* ADD this line */
-  /* The three background/clip/fill lines for the gradient are DELETED */
+  background: linear-gradient(90deg, #ff6a00, #E07A5F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: fadeInDown 1s ease forwards;
 }
 
@@ -406,13 +394,11 @@ section h2 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   transform: translateY(-3px);
 }
-/* This is your original section-title for skills, restored */
 .skills .section-title {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color:#ff7b00;
-  /* Undoing the gradient from the other title */
+  color: #ff7b00;
   background: none;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
@@ -420,7 +406,7 @@ section h2 {
 
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -483,9 +469,8 @@ section h2 {
   transform: translateY(-3px);
 }
 
-/* This is your original section-title for contact, restored */
 .contact .section-title {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: #ff7b00;
@@ -599,6 +584,28 @@ section h2 {
   margin: 0 12px;
 }
 
+/* ===== NEW, ROBUST BUTTON STYLE ===== */
+/* Specific style for the main "Contact Me" button */
+.hero-btn {
+  display: inline-block;
+  background: var(--section-bg);
+  color: var(--nav-blue);
+  font-weight: 700;
+  font-size: 1.03rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 34px;
+  padding: 16px 44px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(243, 119, 81, 0.19);
+  transition: background 0.3s, color 0.3s;
+}
+
+.hero-btn:hover {
+  background: var(--accent-coral);
+  color: var(--white);
+}
+
 
 /* Footer */
 footer {
@@ -610,7 +617,7 @@ footer {
   border-radius: 0 0 20px 20px;
 }
 
-/* ===== RESPONSIVE SECTION (Your original code) ===== */
+/* ===== RESPONSIVE SECTION ===== */
 @media (max-width: 1060px) {
   section, #home {
     padding: 38px 0;
