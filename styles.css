@@ -373,12 +373,10 @@ section h2 {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 40px;
-  color: #ff7b00;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ff7b00; /* ADD this line */
+  /* The three background/clip/fill lines for the gradient are DELETED */
   animation: fadeInDown 1s ease forwards;
 }
-
 
 /* ===== SKILLS SECTION ===== */
 
